@@ -1,0 +1,417 @@
+﻿<!doctype html>
+<html>
+<head>
+<title>Contact ME</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/style.css">
+<style>
+html{
+    height:100%;
+}
+body{
+    margin:0
+}
+.bg{
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #FFFFFF 50%, #1C1C1C 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+}
+.bg2{
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+}
+.bg3{
+    animation-duration:5s;
+}
+.content{
+    background-color:rgba(255,255,255,.8);
+    border-radius:.25em;
+    box-shadow:0 0 .25em rgba(0,0,0,.25);
+    box-sizing:border-box;
+    left:50%;
+    padding:10vmin;
+    position:fixed;
+    text-align:center;
+    top:50%;
+    transform:translate(-50%, -50%);
+}
+h1{
+    font-family:'Nunito ExtraLight Black';
+    font-size: 22px;
+}
+h2{
+    font-family:'Nunito ExtraLight Black';
+    font-size: 20px;
+}
+@keyframes slide{
+    0% {
+    transform:translateX(-25%);
+}
+    100%{
+    transform:translateX(25%);
+}
+}
+@media (min-width: 415px){
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    'tittle'
+    'tittle'
+    'center'
+    'center'
+    'end'
+    'end'
+    'footer';
+   	background-color: #ECECEC;
+    border: 10px solid #fff;
+}
+}
+@media (min-width: 810px){
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+    'tittle tittle'
+    'tittle tittle'
+    'center center'
+    'center center'
+    'end end'
+    'end end'
+    'footer footer';
+   	background-color: #ECECEC;
+    border: 10px solid #fff;
+}
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    'tittle tittle tittle'
+    'tittle tittle tittle'
+    'center center center'
+    'center center center'
+    'end end end'
+    'end end end'
+    'footer footer footer';
+    background-color:rgba(255,255,255,.8);
+    border: 10px solid #fff;
+}
+.tittle {grid-area:tittle; padding: auto; margin: auto;}
+.item1  {grid-area:center; padding: auto; margin: auto;}
+.item2  {grid-area:end; padding: auto; margin: auto;}
+.item3  {grid-area:footer; padding: auto; margin: auto;}
+h1{
+    font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, 'sans-serif';
+}
+.wrapper{
+    text-align:center;
+    margin:35px auto;
+}
+.tabs{
+    margin-top:50px;
+    font-size:12px;
+    padding:0px;
+    list-style:none;
+    background:#fff;
+    box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+    display:inline-block;
+    border-radius:50px;
+    position:relative;
+}
+.tabs a{
+    text-decoration:none;
+    color: #000;
+    text-transform:uppercase;
+    padding:10px 20px;
+    display:inline-block;
+    position:relative;
+    z-index:1;
+    transition-duration:0.6s;
+    font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, 'sans-serif';
+
+}
+.tabs a.active{
+    color:#000;
+}
+.tabs a i{
+    margin: -5px;
+}
+.tabs .selector{
+    height:100%;
+    display:inline-block;
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:1;
+    border-radius:50px;
+    transition-duration:0.6s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: #05abe0;
+    background: -webkit-linear-gradient(bottom left, #05abe0 0%, #8200f4 100%);
+    background: -o-linear-gradient(bottom left, #05abe0 0%, #8200f4 100%);
+    background: linear-gradient(to top right, #05abe0 0%, #8200f4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#8200f4',GradientType=1 );
+}
+.animate-charcter{
+    text-transform:capitalize;
+    background-image: linear-gradient(-180deg,#FFFFFF 0%,#000000 50%,#000000 50%,#FFFFFF 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 25s linear infinite;
+    display: inline-block;
+    font-family:"American Typewriter";
+    font-size: 95px;
+}
+@keyframes textclip{
+to{
+    background-position: 200% center;
+}
+}
+@keyframes animate{
+    0%{
+    left: 0;
+}
+    50% {
+    left: 100%;
+}
+    0% {
+    left: 0;
+}
+}
+p{
+    font-family:'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'DejaVu Sans', Verdana, 'sans-serif';
+    font-size: 15px;
+}
+form{ 
+    max-width:400px;
+    margin-top: 50px auto;
+    margin-bottom: 50px auto;
+}
+.feedback-input{
+    color:black;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight:500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border:2px solid #686868;
+    transition: all 0.3s;
+    padding: 10px;
+    margin-bottom: 20px;
+    width:100%;
+    box-sizing: border-box;
+    outline:0;
+}
+.feedback-input:focus{
+    border:2px solid #181818;
+}
+textarea{
+    height: 150px;
+    line-height: 150%;
+    resize:auto;
+}
+[type="submit"]{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    width: 100%;
+    background:#686868;
+    border-radius:5px;
+    border:0;
+    cursor:pointer;
+    color:white;
+    font-size:24px;
+    padding-top:15px;
+    padding-bottom:15px;
+    transition: all 0.5s;
+    margin-top:-5px;
+    font-weight:700;
+}
+[type="submit"]:hover{
+    background:#181818; 
+}
+.wrapper2{
+    display: inline-flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+i{
+    padding: 0px 5px;
+}
+.wrapper2 i:nth-child(1){
+    color: #484848;
+    cursor: pointer;
+    text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+    transition: all ease-in-out 150ms;
+}
+.wrapper2 i:nth-child(1):hover{
+    margin-top: -10px;
+    text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+    transform: translate(0, -8);
+}
+.wrapper2 i:nth-child(2){
+    color: #484848;
+    cursor: pointer;
+    text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+    transition: all ease-in-out 150ms;
+}
+.wrapper2 i:nth-child(2):hover{
+    margin-top: -10px;
+    text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+    transform: translate(0, -8);
+}
+.wrapper2 i:nth-child(3){
+    color: #484848;
+    cursor: pointer;
+    text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
+    transition: all ease-in-out 150ms;
+}
+.wrapper2 i:nth-child(3):hover{
+   margin-top: -10px;
+   text-shadow: 0px 14px 10px rgba(0, 0, 0, 0.4);
+   transform: translate(0, -5);
+}
+.wrapper2 i:nth-child(4){
+   color: #484848;
+   cursor: pointer;
+   text-shadow: 0px 7px 10px rgba(0, 0, 0, 0.4);
+   transition: all ease-in-out 150ms;
+}
+.wrapper2 i:nth-child(4):hover{
+   margin-top: -10px;
+   text-shadow: 0px 16px 10px rgba(0, 0, 0, 0.3);
+   transform: translate(0, -8);
+}
+.lds-ellipsis{
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ellipsis div{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #0C0C0C;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1){
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2){
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3){
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4){
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1{
+    0%{
+    transform: scale(0);
+}
+    100%{
+    transform: scale(1);
+}
+}
+@keyframes lds-ellipsis3{
+    0%{
+    transform: scale(1);
+}
+    100%{
+    transform: scale(0);
+}
+}
+@keyframes lds-ellipsis2{
+    0%{
+    transform: translate(0, 0);
+}
+    100%{
+    transform: translate(24px, 0);
+}
+}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="logo">
+<br><br>
+<center>
+    <img src= "Images/Logo/Logo.png" alt="HTML5 Icon" width="250" height="200" style="margin-right: -55px;"/>
+</center>
+<br>
+</div>
+<div class="wrapper">
+    <h1><b>GT's Portfolio</b></h1>
+    <h2><b>CREATING INNOVATION</b></h2>
+<nav class="tabs">
+<div class="selector"></div>
+<center>
+    <a href="Main.html" class="active"><i class="fas fa-hand-rock"></i><b>HOME</b></a>
+    <a href="About.html"><i class="fas fa-hand-rock"></i><b>ABOUT</b></a>
+    <a href="Projects.html"><i class="fas fa-hand-rock"></i><b>PROJECTS</b></a>
+    <a href="Contact.html"><i class="fas fa-hand-rock"></i><b>CONTACT</b></a>
+</center>
+</nav>
+</div>
+<div class="grid-container">
+<div class="tittle">
+<center>
+    <h3 class="animate-charcter">Contact ME</h3>
+<br>
+    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+</center>
+</div>
+<div class="item1">
+<center>
+    <form action="mailto:GeoorgeToovar@Gmail.com" method="post" enctype="text/plain">      
+    <input name="Name " type="text" class="feedback-input" placeholder="Name"/>   
+    <input name="Email " type="text" class="feedback-input" placeholder="Email" />
+    <textarea name="Message " class="feedback-input" placeholder="Message"></textarea>
+    <button type="submit" class="fa fa-envelope"></button>
+</form>
+</center>
+</div>
+<div class="item2">
+<br><br><br><br>
+<center>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <div class="wrapper2">
+    <a href="https://twitter.com/GeoorgeToovar"><i class="fa fa-5x fa-twitter-square"></i></a>
+    <a href="https://www.linkedin.com/in/gtsdesign/"><i class="fa fa-5x fa-linkedin-square"></i></a>
+    <a href="https://github.com/GTsDesign"><i class="fa fa-5x fa-github-square"></i></a>
+</div>
+</center>
+</div>
+<div class="item3">
+<br>
+<center>
+<p>© RIGHTS RESERVED ©</p>
+</center>
+<br>
+</div>
+</div>
+</body>
+</html>

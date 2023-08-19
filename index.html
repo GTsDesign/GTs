@@ -1,0 +1,553 @@
+<!doctype html>
+<html>
+<head>
+<title>Main</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="/style.css">
+<style>
+body{
+    position: absolute;
+    top:0%;
+    left: 0%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+.container-fluid{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #FFF;
+}
+.background{
+    background: linear-gradient(135deg, #FFFFFF, #888888, #000000);
+    background-size: 100% 100%;
+    animation: Gradient 15s ease infinite;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    padding:0;
+    margin:0px;
+}
+.cube{
+    position: absolute;
+    top: 80vh;
+    left: 45vw;
+    width: 10px;
+    height: 10px;
+    border: solid 1px #D7D4E4;
+    transform-origin: top left;
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n){
+    border-color: #000 ;
+}
+.cube:nth-child(2){
+    animation-delay: 2s;
+    left: 25vw;
+    top: 40vh;
+}
+.cube:nth-child(3){
+    animation-delay: 4s;
+    left: 75vw;
+    top: 50vh;
+}
+.cube:nth-child(4){
+    animation-delay: 6s;
+    left: 90vw;
+    top: 10vh;
+}
+.cube:nth-child(5){
+    animation-delay: 8s;
+    left: 10vw;
+    top: 85vh;
+}
+.cube:nth-child(6){
+    animation-delay: 10s;
+    left: 50vw;
+    top: 10vh;
+}
+header{
+    position: absolute;
+    top:0%;
+    left: 0%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    color: #FFF;
+    float: left;
+    padding: 10px;
+    margin:0px;
+}
+nav ul{
+    list-style: none;
+}
+nav ul li {
+    float: left;
+    transition: .3s;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #FFFFFF;
+    transition: .5;
+    font-size: 15px;
+    margin-left:20px;
+}
+nav ul li:hover a{
+    text-decoration: none;
+    color: #000000;;
+}
+nav ul li:hover{
+    height: 45px;
+    padding-top: 30px;
+    margin-top: -30px;
+    background: #EFEEF5;
+    text-decoration: none;
+    transform: skew(15deg);
+}
+.logo{
+    position: relative;
+    text-align: center;
+    width: 300px;
+    height: 100px;
+    margin: 10px auto;
+    padding: 20px auto;
+    display: block;
+    right: -3.5%;
+}
+.logo span{
+    color: #000000;
+    font-size: 2em;
+    line-height: 1.4;
+    font-weight: bold;
+}
+.header-content{
+    margin-top:10%;
+    text-align: center;
+    color:  #000000;
+}
+.header-content h1{
+    font-size: 3em;
+    letter-spacing: 1px;
+}
+.header-content p {
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 20px auto;
+}
+.header-content button{
+    width: 140px;
+    margin:20px 10px;
+    color: #000000;
+    font-size: 17px;
+    border:1px solid #EFEEF5;
+    font-weight: 500;
+    background: #EFEEF5;
+    border-radius: 20px;
+    padding: 10px;
+    cursor:pointer;
+    transition: .3s;
+}
+.header-content button:hover{
+    border-radius: 0;
+}
+@keyframes Gradient{
+    0%{
+    background-position: 0% 30%;
+}
+    50%{
+    background-position: 100% 50%;
+}
+    100%{
+    background-position: 0% 30%;
+}
+}
+@keyframes cube{
+    from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+}
+    to{
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+}
+}
+.content{
+    background-color:transparent;
+    border-radius:.25em;
+    box-sizing:border-box;
+    left:50%;
+    padding:10vmin;
+    position:fixed;
+    text-align:center;
+    top:50%;
+    transform:translate(-50%, -50%);
+}
+@keyframes slide{
+    0%{
+    transform:translateX(-25%);
+}
+    100%{
+    transform:translateX(25%);
+}
+}
+.grid-container{
+     display: grid;
+     grid-template-columns: 1fr;
+     grid-template-areas:
+     'tittle'
+     'left'
+     'center'
+     'right'
+     'end'
+     'footer';
+     background-color: #ECECEC;
+     border: 10px solid #fff;
+     resize: both;
+}
+@media (min-width: 415px){
+.grid-container{
+	 display: grid;
+	 grid-template-columns: 1fr 1fr 1fr;
+     grid-template-areas:
+	 'tittle tittle tittle'
+	 'center center center'
+	 'end end end';
+     background-color:rgba(255,255,255,.8);
+	 border: 10px solid #fff;
+}
+}
+@media (min-width: 810px){
+.grid-container{
+	 display: grid;
+     grid-template-columns: 1fr;
+     grid-template-areas:
+	 'tittle'
+	 'center'
+	 'end';
+   	 background-color: #ECECEC;
+	 border: 10px solid #fff;
+}
+}
+.grid-container{
+	 display: grid;
+     grid-template-columns: 1fr;
+     grid-template-areas:
+     'tittle'
+	 'center'
+	 'end';
+   	 background-color: #ECECEC;
+	 border: 10px solid #fff;
+}
+.tittle {grid-area:tittle; padding: auto; margin: auto;}
+.item1  {grid-area:center; padding: auto; margin: auto;}
+.item2  {grid-area:end; padding: auto; margin: auto; margin-bottom: 30px;}
+h3 {
+    position: relative;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 2em;
+    letter-spacing: 4px;
+    /* Remove background gradient */
+    background: none;
+    overflow: hidden;
+    /* Other styles... */
+}
+@keyframes textclip{
+    to {
+        background-position: 100% center;
+    }
+}
+.animate-charcter {
+    text-transform: capitalize;
+    font-family: "American Typewriter";
+    font-size: 80px;
+    background-image: linear-gradient(-180deg, #ffffff 0%, #000000 50%, #000000 50%, #ffffff 100%);
+    background-clip: text;
+    -webkit-background-clip: text; /* For Safari */
+    color: transparent;
+    animation: textclip 25s linear infinite;
+    display: center;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 100% center;
+    }
+}
+.geeks{
+    width: 250px;
+    height: 2px;
+    background: #fff;
+    position: center;
+    top: 200%;
+    transform: translate(-50%, -50%);
+}
+.geeks::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    animation: animate 10s linear infinite;
+}
+@keyframes animate{
+    0% {
+    left: 0;
+}
+    50% {
+    left: 100%;
+}
+    0% {
+    left: 0;
+}
+}
+p{
+    font-family: chunk;
+    font-size: 20px;
+}
+p1 {
+    font-family: "Apple Chancery";
+    font-size: 15px;
+    font-weight: bold;
+    /* Remove background gradient */
+    background-image: none;
+    background-clip: unset;
+    -webkit-background-clip: unset; /* For Safari */
+    color: black;
+    /* Other styles... */
+}
+.tabs{
+  font-size:15px;
+  padding:0px;
+  list-style:none;
+  background:#fff;
+  box-shadow:0px 5px 20px rgba(0,0,0,0.1);
+  display:block;
+  border-radius:50px;
+  position:center;
+  text-align: center;
+}
+
+.tabs a{
+  text-decoration:none;
+  color: #000;
+  text-transform:uppercase;
+  padding:10px 20px;
+  display:block;
+  position:center;
+  z-index:1;
+  transition-duration:0.6s;
+}
+
+.tabs a.active{
+  color:#000;
+}
+
+.tabs a i{
+  margin:auto;
+}
+
+.tabs .selector{
+  height:100%;
+  display:block;
+  position:center;
+  border-radius:50px;
+  transition-duration:0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background: #05abe0;
+  background: -moz-linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+  background: -webkit-linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+  background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#8200f4',GradientType=1 );
+}
+a:link {
+  color: black; 
+  background-color: transparent; 
+  text-decoration: none;
+}
+li{
+    font-family: 'Josefin Sans', sans-serif;
+}
+.lds-ellipsis{
+    display: block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+.lds-ellipsis div{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #0C0C0C;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1){
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2){
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3){
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4){
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1{
+    0%{
+    transform: scale(0);
+}
+    100%{
+    transform: scale(1);
+}
+}
+@keyframes lds-ellipsis3{
+    0%{
+    transform: scale(1);
+}
+    100%{
+    transform: scale(0);
+}
+}
+@keyframes lds-ellipsis2{
+    0%{
+    transform: translate(0, 0);
+}
+    100%{
+    transform: translate(24px, 0);
+}
+}
+h1{
+    font-family:'Nunito ExtraLight Black';
+    font-size: 22px;
+}
+h2{
+    font-family:'Nunito ExtraLight Black';
+    font-size: 20px;
+}
+@media (max-width: 768px) {
+    /* Adjust font sizes for titles and text */
+    h3.animate-charcter {
+        font-size: 1.2em; /* Decrease font size for mobile */
+    }
+    p1 {
+        font-size: 12px; /* Decrease font size for mobile */
+    }
+    
+    /* Adjust cube positions for mobile */
+    .cube {
+        top: 50vh; /* Adjust top position for mobile */
+        left: 40vw; /* Adjust left position for mobile */
+        width: 8px; /* Adjust cube size for mobile */
+        height: 8px; /* Adjust cube size for mobile */
+    }
+    
+    /* Other adjustments for mobile layout */
+    .header-content h1 {
+        font-size: 2em; /* Decrease font size for mobile */
+    }
+    .header-content p {
+        font-size: 16px; /* Decrease font size for mobile */
+    }
+    .header-content button {
+        font-size: 14px; /* Decrease font size for mobile */
+        padding: 8px; /* Adjust button padding for mobile */
+    }
+    .tabs a {
+        font-size: 12px; /* Decrease font size for mobile */
+        padding: 8px 15px; /* Adjust tab padding for mobile */
+    }
+    .tabs .selector {
+        border-radius: 30px; /* Adjust selector border-radius for mobile */
+    }
+}
+</style>
+</head>
+    <body>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <div class="container-fluid">
+    <div class="background">
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+    <div class="cube"></div>
+</div>
+    <header>
+    <nav>
+    <ul>
+    <li><a href="Main.html"><b>HOME</b></a></li>
+    <li><a href="About.html"><b>ABOUT</b></a></li>
+    <li><a href="Projects.html"><b>PROJECTS</b></a></li>
+    <li><a href="Projects.html"><b>CONTACT</b></a></li>
+</ul>
+</nav>
+<section class="header-content">
+    <span class="logo">
+    <img src= "Images/Logo/Logo.png" alt="HTML5 Icon" width="300" height="260"/>
+    </span>
+<br><br><br><br><br><br><br><br><br><br>
+    <h1>GT's Portfolio</h1>
+    <h2>CREATING INNOVATION</h2>
+    <button>
+    <a href="https://wa.me/17182559200?text=Hi there, I'm interested in your services; please reach out to me as soon as you can. Thank you." target="_blank">
+    <b>HIRE ME</b></a>
+    </button>
+</section>
+<section class="grid-container">
+<div class="tittle">
+<center>
+    <h3 class="animate-charcter">STRENGTHS</h3>
+<br>
+    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+</center>
+</div>
+<div class="item1">
+<center>
+    <p><b>Critical Thinking</b></p>
+<br>
+    <img src= "Images/Services/Ideas.png" alt="HTML5 Icon" width="128" height="128"/>
+<br><br>
+    <p1>"Critical thinking reflects on my own beliefs and considers the ideas of others.<br>It allows me to create connections between different perspectives,<br>and to be active in listening and evaluating arguments.<br> This has helped me gain a deeper understanding of the various elements involved<br>and separate them from the intense emotions of the subjects."</p1>
+<br><br>
+    <p><b>Graphic Design</b></p>
+<br>
+    <img src= "Images/Services/Logo Design.png" alt="HTML5 Icon" width="150" height="150"/>
+<br><br>
+    <p1>"Graphic design is a strategy designed by companies to<br>help people quickly identify their products or organization by logos and business cards.<br>Giving them a reason to choose their products over others."</p1>
+<br><br>
+<p><b>Web Development</b></p>
+<br>
+    <img src= "Images/Services/Web Design.png" alt="HTML5 Icon" width="200" height="175"/>
+<br><br>
+    <p1>"Web development process includes web design, web content development, client-side/server-side scripting,<br>and network security configuration, among other tasks."</p1>
+<br><br><br>
+</center>
+</div>
+<div class="item2">
+<div class="tabs">
+<div class="selector"></div>
+<center>
+    <a href="Main.html"><i class="fas fa-bolt"></i><b>TOP</b></a>
+</center>
+</div>
+</div>
+</section>
+</header>
+</div>
+</body>
+</html>
