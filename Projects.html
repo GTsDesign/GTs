@@ -6,6 +6,7 @@
 <link rel="stylesheet" type="text/css" href="/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 <style>
 <style>
 html{
@@ -62,6 +63,7 @@ h2{
 }
 .grid-container{
      display: grid;
+     overflow: hidden;
      grid-template-columns: 1fr 1fr 1fr;
      grid-template-areas:
      'tittle tittle tittle'
@@ -69,6 +71,8 @@ h2{
      'middle middle middle'
      'left center right'
      'left center right'
+     'middle1 middle2 middle2'
+     'middle1 middle2 middle2'
      'left1 center1 right1'
      'left1 center1 right1'
      'end end end'
@@ -85,9 +89,12 @@ h2{
 .item6  {grid-area:left1; padding: auto; margin: auto;}
 .item7  {grid-area:right1; padding: auto; margin: auto;}
 .item8  {grid-area:end; padding: auto; margin: auto;}
+.item9  {grid-area:middle1; padding: auto; margin: auto;}
+.item10  {grid-area:middle2; padding: auto; margin: auto;}
 @media (max-width: 820px){
 .grid-container{
      display: grid;
+     overflow: hidden;
      grid-template-columns: 1fr;
      grid-template-areas:
      'tittle'
@@ -95,6 +102,8 @@ h2{
      'left'
      'center'
      'right'
+     'middle1'
+     'middle2'
      'left1'
      'center1'
      'right1'
@@ -107,6 +116,7 @@ h2{
 @media (max-width: 415px){
 .grid-container{
      display: grid;
+     overflow: hidden;
      grid-template-columns: 1fr;
      grid-template-areas:
      'tittle'
@@ -114,6 +124,8 @@ h2{
      'left'
      'center'
      'right'
+     'middle1'
+     'middle2'
      'left1'
      'center1'
      'right1'
@@ -501,6 +513,109 @@ i{
   43% { transform: rotate(0); }
   100% { transform: rotate(0); }
 }
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px&display=swap');
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+.pacman {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: #F2D648;
+  position: relative;
+  margin-top: 20px;
+}
+
+.pacman__eye {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 20px;
+  right: 40px;
+  background: #333333;
+}
+
+.pacman__mouth {
+  background: #000;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  animation-name: eat;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+}
+
+.pacman__food {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fff;
+  border-radius: 50%;
+  top: 40%;
+  left: 120px;
+  animation-name: food;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes eat {
+  0% {
+    clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  }
+  25% {
+    clip-path: polygon(100% 60%, 44% 48%, 100% 40%);
+  }
+  50% {
+    clip-path: polygon(100% 50%, 44% 48%, 100% 50%);
+  }
+  75% {
+   clip-path: polygon(100% 59%, 44% 48%, 100% 35%);
+  }
+  100% {
+   clip-path: polygon(100% 74%, 44% 48%, 100% 21%);
+  }
+}
+
+@keyframes food {
+  0% {
+    transform: translateX(0);
+     opacity: 1;
+  }
+  100% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+svg {
+  font-family: 'Russo One', sans-serif;
+  position: center; 
+  width: 100%; height: 100%;
+}
+svg text {
+  text-transform: uppercase;
+  animation: stroke 5s infinite alternate;
+  stroke-width: 2;
+  stroke: #365fa0;
+  font-size: 220px;
+}
+@keyframes stroke {
+  0%   {
+    fill: rgba(72,138,20,0); stroke: rgba(67,68,68,1.00);
+    stroke-dashoffset: 25%; stroke-dasharray: 0 50%; stroke-width: 2;
+  }
+  70%  {fill: rgba(72,138,20,0); stroke: rgba(253,253,253,1.00); }
+  80%  {fill: rgba(72,138,20,0); stroke: rgba(253,253,253,1.00); stroke-width: 3; }
+  100% {
+    fill: rgba(67,68,68,1.00); stroke: rgba(54,95,160,0); 
+    stroke-dashoffset: -25%; stroke-dasharray: 50% 0; stroke-width: 0;
+  }
+}
+.centered-svg {
+    display: block;
+    margin: 0 auto;
+}
 </style>
 </head>
 <body>
@@ -566,13 +681,35 @@ i{
   </center>
   <br>
 </div>
+<!-- In the X item -->
+<div class="item9">
+  <center>
+<div class="pacman">
+  <div class="pacman__eye"></div>
+  <div class="pacman__mouth"></div>
+  <div class="pacman__food">
+</div>
+</div> 
+  </center>
+  <br>
+</div> 
+<!-- In the Y item -->
+<div class="item10">
+  <center>
+      <svg viewBox="0 0 1320 300">
+  <text x="50%" y="50%" dy=".35em" text-anchor="middle">
+    Portfolio
+  </text>
+</svg>  
+    </center>
+</div>
 <!-- In the fifth item -->
 <div class="item5">
     <center>
-        <br><br><br><br><br><br>
-        <img src="Images/Projects/Logos/Evascents.png" alt="HTML5 Icon" width="300" height="120" style="max-width: 100%;"/>
+        <br><br><br><br>
+        <img src="Images/Projects/Logos/Evascents.png" alt="HTML5 Icon" width="350" height="160" style="max-width: 100%;"/>
         <br><br><br>
-        <a href="https://www.evascentsdesign.com" target="_blank" style="text-decoration: none;">
+        <a href="hhttps://www.evascentsdesign.com" target="_blank" style="text-decoration: none;">
             <img src="Images/Projects/Websites/Evascents.png" alt="HTML5 Icon" width="380" height="200" style="max-width: 100%;"/>
         </a>
     </center>
@@ -580,9 +717,8 @@ i{
 <!-- In the six item -->
 <div class="item6">
     <center>
-        <br><br><br>
-        &nbsp;
-        <img src="Images/Projects/Logos/Crossland.png" alt="HTML5 Icon" width="190" height="200" style="max-width: 100%; margin-left: -15px;"/>
+        <br><br><br><br>
+        <img src="Images/Projects/Logos/Crossland.png" alt="HTML5 Icon" width="175" height="180" style="max-width: 100%;"/>
         <br><br>
         <a href="https://geoorgetoovar.itch.io/crossland" target="_blank" style="text-decoration: none;">
             <img src="Images/Projects/Game/Game.png" alt="HTML5 Icon" width="380" height="200" style="max-width: 100%;"/>
